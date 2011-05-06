@@ -6,6 +6,20 @@ Author URI: http://www.os-templates.com/
 Licence: <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>
 */
 
+ul.dopiaza-flickr-badge-content {
+	align:left;
+}
+
+ul.dopiaza-flickr-badge-content li {
+	list-style:none;
+	display:block;
+	float:left;
+}
+
+ul.dopiaza-flickr-badge-content {
+	wrap:no-wrap;
+}
+
 #featured_slide {
 	position:relative;
 	margin:0 auto 0;
