@@ -11,15 +11,14 @@
 <script type="text/javascript" src="scripts/jquery.cycle.setup.js"></script>
 <script type="text/javascript" src="scripts/site.search.js"></script>
 <script type="text/javascript" src="scripts/jquery.carousel.min.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 
-<!-- <script type="text/javascript" src="scripts/getsatisfaction.js"></script> -->
-
+<!-- Get Satisfaction wodget -->
 <script type="text/javascript" charset="utf-8">
   var is_ssl = ("https:" == document.location.protocol);
   var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
   document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
-
 <script type="text/javascript" charset="utf-8">
   var feedback_widget_options = {};
   feedback_widget_options.display = "overlay";  
@@ -30,7 +29,21 @@
   var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
 </script>
 
-<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<!-- Very rudimentary multi-language support -->
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+	$('h2,p').each(
+		function(intIndex) {
+			var currentLang = "nl";
+			if (this.className.indexOf("i18n") != -1 && this.className.indexOf(currentLang) == -1) {
+				this.style.visibility="hidden";
+				this.style.display = 'none';
+			}
+		}
+	);
+});
+</script>
+
 </head>
 <body id="top">
 		
@@ -74,7 +87,9 @@
     </div>
     <div id="logo">
       <h1><a href="#">Pane <strong>&</strong> Olio</a></h1>
-      <h2>Toscaanse Delicatessen <strong>||</strong> Catering <strong>||</strong> Traiteur</h2>
+      <h2 class="i18n nl">Toscaanse Delicatessen <strong>||</strong> Catering <strong>||</strong> Traiteur</h2>
+      <h2 class="i18n en">Tuscan Restaurant <strong>||</strong> Catering <strong>||</strong> Traiteur</h2>
+	  <h2 class="i18n it">Delicatezze Toscane <strong>||</strong> Catering <strong>||</strong> Trattoria</h2>
       <p>A proposal of typical Tuscan dishes prepared by following the ancient popular recipes</p>
     </div>
     <br class="clear" />
@@ -171,28 +186,9 @@
     </div>
     <div class="column">
       <div class="sponsors">
-	
         <h2>Friends</h2>
-
 		<div id="fb-root"></div>		
-		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/pages/Pane-Olio/225185744165180" width="250" show_faces="true" stream="true" header="true"></fb:like-box>
-
-		<!-- <fb:like href="http://www.paneeolio.com" width="250" show_faces="true" stream="true" header="true"></fb:like>
-		<fb:activity width="250" header="true"></fb:activity>	
-		<br/><br/>
-		<fb:recommendations width="250" header="true"></fb:recommendations> -->
-        <!-- <div class="b_250"><a href="#"><img src="demoimages/250x250.gif" alt="" /></a></div>
-        <div class="b_125">
-          <ul>
-            <li><a href="#"><img src="demoimages/125x125.gif" alt="" /></a></li>
-            <li><a href="#"><img src="demoimages/125x125.gif" alt="" /></a></li>
-            <li><a href="#"><img src="demoimages/125x125.gif" alt="" /></a></li>
-            <li><a href="#"><img src="demoimages/125x125.gif" alt="" /></a></li>
-            <li><a href="#"><img src="demoimages/125x125.gif" alt="" /></a></li>
-            <li class="last"><a href="#"><img src="demoimages/125x125.gif" alt="" /></a></li>
-          </ul>
-          <div class="clear"></div>
-        </div> -->
+		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/pages/Pane-Olio/225185744165180" width="300" show_faces="true" stream="true" header="true"></fb:like-box>
       </div>
     </div>
     <br class="clear" />
